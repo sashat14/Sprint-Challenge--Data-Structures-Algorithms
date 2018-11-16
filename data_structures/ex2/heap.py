@@ -1,5 +1,9 @@
 def heapsort(arr):
- pass 
+  heap = Heap()
+  sorted_arr = []
+  for i in arr:
+    heap.insert(i)
+     
  
 
 class Heap:
