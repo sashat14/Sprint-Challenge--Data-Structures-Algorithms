@@ -10,7 +10,7 @@ class BinarySearchTree:
     queue = [self]
     new_vals = []
     while queue:
-      current_node = queue.pop()
+      current_node = queue.pop(0)
       new_vals.append(cb(current_node.value))
       if current_node.left is not None:
         queue.append(current_node.left)
@@ -54,7 +54,7 @@ class BinarySearchTree:
       current = current.right
     return max_value
 
-double = lambda x: x * 2
+same = lambda x: x
 
 b1 = BinarySearchTree(5)
 b1.insert(2)
@@ -62,4 +62,12 @@ b1.insert(7)
 print(b1.value)
 print(b1.left.value)
 print(b1.right.value)
-print(b1.breadth_first_for_each(double))  
+print(b1.breadth_first_for_each(same))  
+
+# b1 = BinarySearchTree(5)
+# b1.insert(3)
+# b1.insert(4)
+# b1.insert(10)
+# b1.insert(9)
+# b1.insert(11)
+# print(b1.breadth_first_for_each(lambda x: x))
